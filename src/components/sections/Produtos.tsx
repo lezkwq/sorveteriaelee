@@ -1,5 +1,4 @@
-import tacaSorvete from "@/assets/taca-sorvete.jpg.asset.json";
-import bandejaAcai from "@/assets/bandeja-acai.jpg.asset.json";
+import { IMG_BANDEJA_ACAI, IMG_TACA_SORVETE } from "@/lib/images";
 import { Reveal } from "@/components/Reveal";
 import { CATEGORIES, type Category } from "@/lib/site";
 

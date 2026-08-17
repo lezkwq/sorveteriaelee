@@ -1,4 +1,4 @@
-import picolesFachada from "@/assets/picoles-fachada.jpg.asset.json";
+import { IMG_PICOLES_FACHADA } from "@/lib/images";
 import { Reveal } from "@/components/Reveal";
 
 export function Sobre() {
@@ -28,7 +28,9 @@ export function Sobre() {
         {/* Produto, marca e loja na mesma imagem: a foto mais forte do conjunto */}
         <Reveal className="border-t-2 border-cacau lg:col-span-6 lg:border-t-0 lg:border-l-2">
           <img
-            src={picolesFachada.url}
+            src={IMG_PICOLES_FACHADA.src}
+            srcSet={IMG_PICOLES_FACHADA.srcSet}
+            sizes="(min-width: 1024px) 50vw, 100vw"
             alt="Três picolés da Sorveteria Elee segurados em frente à fachada colorida da loja"
             width={1122}
             height={1402}

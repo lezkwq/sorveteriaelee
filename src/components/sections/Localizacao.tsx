@@ -1,4 +1,4 @@
-import fachada from "@/assets/fachada.jpg.asset.json";
+import { IMG_FACHADA } from "@/lib/images";
 import { Reveal } from "@/components/Reveal";
 import { ADDRESS, MAPS_URL } from "@/lib/site";
 
@@ -33,7 +33,9 @@ export function Localizacao() {
 
         <Reveal className="lg:col-span-7">
           <img
-            src={fachada.url}
+            src={IMG_FACHADA.src}
+            srcSet={IMG_FACHADA.srcSet}
+            sizes="(min-width: 1024px) 58vw, 100vw"
             alt="Fachada da Sorveteria Elee na R. Ernesto Bianchini, 254, em Brusque"
             width={1200}
             height={900}

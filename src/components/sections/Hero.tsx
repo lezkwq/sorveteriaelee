@@ -1,4 +1,4 @@
-import acaiCopos from "@/assets/acai-copos.jpg.asset.json";
+import { IMG_ACAI_COPOS } from "@/lib/images";
 import { WHATSAPP_URL } from "@/lib/site";
 
 /**
@@ -19,7 +19,9 @@ export function Hero() {
         <div className="relative order-1 lg:order-2 lg:col-span-5">
           <div className="absolute inset-0 bg-rosa" />
           <img
-            src={acaiCopos.url}
+            src={IMG_ACAI_COPOS.src}
+            srcSet={IMG_ACAI_COPOS.srcSet}
+            sizes="(min-width: 1024px) 45vw, 100vw"
             alt="Dois copos de açaí montados com morango, granola e creme sobre balcão de inox"
             width={960}
             height={1600}
