@@ -142,3 +142,10 @@
     color: var(--color-foreground);
   }
 }
+
+/* Hide "Edit with Lovable" badge */
+#lovable-badge,
+.lovable-badge,
+[data-lovable-badge] {
+  display: none !important;
+}
