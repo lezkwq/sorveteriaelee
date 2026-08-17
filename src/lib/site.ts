@@ -4,13 +4,13 @@
  * so entram neste arquivo quando forem fornecidos pelo cliente.
  */
 
-export const WHATSAPP_NUMBER = "5547999416864" as const;
+export const WHATSAPP_NUMBER = "554791557148" as const;
 
 export const WHATSAPP_MESSAGE =
   "Olá, vim pelo site da Sorveteria Elee e gostaria de fazer um pedido. Pode me ajudar?" as const;
 
 export const WHATSAPP_URL =
-  "https://wa.me/5547999416864?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Sorveteria%20Elee%20e%20gostaria%20de%20fazer%20um%20pedido.%20Pode%20me%20ajudar%3F" as const;
+  "https://wa.me/554791557148?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Sorveteria%20Elee%20e%20gostaria%20de%20fazer%20um%20pedido.%20Pode%20me%20ajudar%3F" as const;
 
 export const INSTAGRAM_URL = "https://www.instagram.com/sorveteria_elee/" as const;
 
