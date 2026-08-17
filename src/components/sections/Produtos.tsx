@@ -1,9 +1,21 @@
 import casquinha from "@/assets/casquinha.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
-import { CATEGORIES } from "@/lib/site";
+import { CATEGORIES, type Category } from "@/lib/site";
+
+/** Fallback defensivo: garante um objeto valido caso o id nao seja encontrado. */
+const EMPTY_CATEGORY: Category = { id: "", name: "", text: "" };
+
+function pick(id: string): Category {
+  return CATEGORIES.find((c) => c.id === id) ?? EMPTY_CATEGORY;
+}
 
 export function Produtos() {
-  const [acai, sorvetes, picoles, milkshakes, pastel] = CATEGORIES;
+  const acai = pick("acai");
+  const sorvetes = pick("sorvetes");
+  const picoles = pick("picoles");
+  const milkshakes = pick("milk-shakes");
+  const pastel = pick("pastel");
+
 
   return (
     <section id="o-que-tem" className="border-b-2 border-cacau bg-creme">
