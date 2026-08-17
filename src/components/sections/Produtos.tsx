@@ -57,9 +57,10 @@ export function Produtos() {
               height={1440}
               loading="lazy"
               decoding="async"
-              className="h-full min-h-[320px] w-full object-cover transition-transform duration-700 hover:scale-[1.04]"
+              className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.04] md:absolute md:inset-0 md:aspect-auto md:h-full"
             />
           </Reveal>
+
 
           <Reveal delay={80} className="flex flex-col justify-center bg-creme p-7 md:col-span-3 md:p-12">
             <span className="eyebrow text-cacau/50">02</span>
