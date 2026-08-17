@@ -11,9 +11,9 @@ import { Avaliacoes } from "@/components/sections/Avaliacoes";
 import { Localizacao } from "@/components/sections/Localizacao";
 import { CtaFinal } from "@/components/sections/CtaFinal";
 
-const TITLE = "Sorveteria Elee | Sorvetes, Picolés e Açaí em Brusque";
+const TITLE = "Sorveteria Elee";
 const DESCRIPTION =
-  "Sorvetes e picolés artesanais, açaí, milk shake e muito mais no Rio Branco, em Brusque. Conheça a Sorveteria Elee.";
+  "Sorvetes e picolés artesanais, açaí, milk shake, pastel e caldo de cana no Rio Branco, em Brusque. Conheça a Sorveteria Elee.";
 const SITE_URL = "https://sorveteriaelee.lovable.app";
 
 export const Route = createFileRoute("/")({
