@@ -1,4 +1,4 @@
-import copoMao from "@/assets/copo-mao.jpg.asset.json";
+import acaiDuplo from "@/assets/acai-duplo.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
 
 export function Editorial() {
@@ -7,10 +7,10 @@ export function Editorial() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 lg:grid-cols-12">
         <Reveal className="lg:col-span-7">
           <img
-            src={copoMao.url}
-            alt="Cliente segurando um copo de açaí com creme, cerejas e cobertura de chocolate"
-            width={1069}
-            height={1440}
+            src={acaiDuplo.url}
+            alt="Dois copos de açaí com morango, banana e creme, com potes de cobertura ao fundo"
+            width={1110}
+            height={1417}
             loading="lazy"
             decoding="async"
             className="aspect-[4/5] w-full object-cover object-center lg:aspect-[4/4.4]"
