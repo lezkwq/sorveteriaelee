@@ -20,12 +20,13 @@ export function Produtos() {
   return (
     <section id="o-que-tem" className="border-b-2 border-cacau bg-creme">
       <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-        <Reveal className="max-w-[16ch]">
-          <h2 className="display-lg text-cacau">Tem de tudo um pouco.</h2>
-          <p className="font-editorial mt-5 text-xl text-cacau/75 md:text-2xl">
+        <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <h2 className="display-lg max-w-[9ch] text-cacau">Tem de tudo um pouco.</h2>
+          <p className="font-editorial max-w-[26ch] text-xl text-cacau/75 md:pb-2 md:text-2xl">
             E sempre tem uma boa desculpa para voltar.
           </p>
         </Reveal>
+
 
         {/* Composicao assimetrica: cada categoria ocupa um peso diferente */}
         <div className="mt-14 grid grid-cols-1 gap-px border-2 border-cacau bg-cacau md:grid-cols-6">
