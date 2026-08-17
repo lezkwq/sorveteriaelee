@@ -38,9 +38,9 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: IMG_ACAI_COPOS.src,
-        imagesrcset: IMG_ACAI_COPOS.srcSet,
-        imagesizes: "(min-width: 1024px) 45vw, 100vw",
-        fetchpriority: "high",
+        imageSrcSet: IMG_ACAI_COPOS.srcSet,
+        imageSizes: "(min-width: 1024px) 45vw, 100vw",
+        fetchPriority: "high",
       },
     ],
     scripts: [
