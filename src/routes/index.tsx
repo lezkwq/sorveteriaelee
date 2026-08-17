@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
           name: "Sorveteria Elee",
           description: DESCRIPTION,
           url: SITE_URL,
-          telephone: "+5547999416864",
+          telephone: "+554791557148",
           address: {
             "@type": "PostalAddress",
             streetAddress: "R. Ernesto Bianchini, 254",
