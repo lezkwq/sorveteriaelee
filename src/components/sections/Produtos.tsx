@@ -20,7 +20,7 @@ export function Produtos() {
   return (
     <section id="o-que-tem" className="border-b-2 border-cacau bg-creme">
       <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-        <Reveal className="max-w-[24ch]">
+        <Reveal className="max-w-[16ch]">
           <h2 className="display-lg text-cacau">Tem de tudo um pouco.</h2>
           <p className="font-editorial mt-5 text-xl text-cacau/75 md:text-2xl">
             E sempre tem uma boa desculpa para voltar.
