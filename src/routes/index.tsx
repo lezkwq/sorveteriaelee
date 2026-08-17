@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { IMG_ACAI_COPOS } from "@/lib/images";
-
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsappFab } from "@/components/WhatsappFab";
@@ -31,18 +29,7 @@ export const Route = createFileRoute("/")({
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [
-      { rel: "canonical", href: SITE_URL },
-      // LCP: a foto do hero e o unico recurso de imagem com prioridade.
-      {
-        rel: "preload",
-        as: "image",
-        href: IMG_ACAI_COPOS.src,
-        imageSrcSet: IMG_ACAI_COPOS.srcSet,
-        imageSizes: "(min-width: 1024px) 45vw, 100vw",
-        fetchPriority: "high",
-      },
-    ],
+    links: [{ rel: "canonical", href: SITE_URL }],
     scripts: [
       {
         type: "application/ld+json",
