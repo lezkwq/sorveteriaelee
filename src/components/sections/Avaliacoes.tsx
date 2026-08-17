@@ -20,16 +20,16 @@ export function Avaliacoes() {
           </Reveal>
         </div>
 
-        {/* Depoimentos tratados como texto, sem componente generico de review */}
-        <ul className="-mx-5 flex snap-x snap-mandatory gap-px overflow-x-auto px-5 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
+        {/* Depoimentos tratados como texto, empilhados no celular */}
+        <ul className="grid grid-cols-1 md:grid-cols-3">
           {REVIEWS.map((review, i) => (
             <li
               key={review.author}
-              className="min-w-[85%] shrink-0 snap-start border-r-2 border-cacau/15 pt-10 pr-8 last:border-r-0 md:min-w-0 md:pt-12 md:pr-10"
+              className="border-b-2 border-cacau/15 py-10 md:border-r-2 md:border-b-0 md:pr-10 md:pt-12 md:last:border-r-0 last:border-b-0 md:[&:not(:first-child)]:pl-10"
             >
               <Reveal delay={i * 90}>
                 <span className="eyebrow text-rosa">0{i + 1}</span>
-                <blockquote className="font-display mt-5 text-[clamp(1.35rem,2.1vw,1.85rem)] leading-[1.08] text-cacau uppercase">
+                <blockquote className="font-display mt-5 text-[clamp(1.35rem,2vw,1.75rem)] leading-[1.06] text-cacau uppercase">
                   {review.quote}
                 </blockquote>
                 <p className="eyebrow mt-6 text-cacau/55">{review.author}</p>
@@ -37,6 +37,7 @@ export function Avaliacoes() {
             </li>
           ))}
         </ul>
+
       </div>
     </section>
   );
