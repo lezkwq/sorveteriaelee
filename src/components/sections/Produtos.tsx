@@ -1,5 +1,4 @@
-import tacaSorvete from "@/assets/taca-sorvete.jpg.asset.json";
-import bandejaAcai from "@/assets/bandeja-acai.jpg.asset.json";
+import { IMG_BANDEJA_ACAI, IMG_TACA_SORVETE } from "@/lib/images";
 import { Reveal } from "@/components/Reveal";
 import { CATEGORIES, type Category } from "@/lib/site";
 
@@ -53,7 +52,9 @@ export function Produtos() {
           {/* Bandeja de acai: montagem real da casa */}
           <Reveal className="relative overflow-hidden bg-rosa md:col-span-3">
             <img
-              src={bandejaAcai.url}
+              src={IMG_BANDEJA_ACAI.src}
+              srcSet={IMG_BANDEJA_ACAI.srcSet}
+              sizes="(min-width: 768px) 50vw, 100vw"
               alt="Bandeja de açaí montada com creme, chocolate, morango e confeitos"
               width={1200}
               height={1200}
@@ -83,7 +84,9 @@ export function Produtos() {
 
           <Reveal delay={80} className="relative overflow-hidden bg-cacau md:col-span-2">
             <img
-              src={tacaSorvete.url}
+              src={IMG_TACA_SORVETE.src}
+              srcSet={IMG_TACA_SORVETE.srcSet}
+              sizes="(min-width: 768px) 34vw, 100vw"
               alt="Taça de sorvete com calda de morango, confeitos crocantes e wafer"
               width={1122}
               height={1402}

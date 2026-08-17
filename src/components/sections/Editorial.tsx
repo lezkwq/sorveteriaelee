@@ -1,4 +1,4 @@
-import acaiDuplo from "@/assets/acai-duplo.jpg.asset.json";
+import { IMG_ACAI_DUPLO } from "@/lib/images";
 import { Reveal } from "@/components/Reveal";
 
 export function Editorial() {
@@ -7,7 +7,9 @@ export function Editorial() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 lg:grid-cols-12">
         <Reveal className="lg:col-span-7">
           <img
-            src={acaiDuplo.url}
+            src={IMG_ACAI_DUPLO.src}
+            srcSet={IMG_ACAI_DUPLO.srcSet}
+            sizes="(min-width: 1024px) 58vw, 100vw"
             alt="Dois copos de açaí com morango, banana e creme, com potes de cobertura ao fundo"
             width={1110}
             height={1417}
