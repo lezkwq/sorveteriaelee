@@ -1,90 +1,71 @@
-/**
- * Dados institucionais reais da Sorveteria Elee.
- * Nenhuma informacao aqui deve ser inventada: preco, sabor, premio ou historia
- * so entram neste arquivo quando forem fornecidos pelo cliente.
- */
-
-export const WHATSAPP_NUMBER = "554791557148" as const;
-
-export const WHATSAPP_MESSAGE =
-  "Olá, vim pelo site da Sorveteria Elee e gostaria de fazer um pedido. Pode me ajudar?" as const;
-
-export const WHATSAPP_URL =
-  "https://wa.me/554791557148?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Sorveteria%20Elee%20e%20gostaria%20de%20fazer%20um%20pedido.%20Pode%20me%20ajudar%3F" as const;
-
-export const INSTAGRAM_URL = "https://www.instagram.com/sorveteria_elee/" as const;
-
-export const ADDRESS = {
-  street: "R. Ernesto Bianchini, 254",
-  district: "Rio Branco, Brusque, SC",
+/** Dados fornecidos pelo cliente. Atualizar somente com informações confirmadas. */
+export const SITE = {
+  name: "Boutique do Açaí",
+  city: "Itajaí, SC",
+  phone: "(47) 99959 5793",
+  instagram: "@boutiquedoacaisc",
+  menu: "https://pedir.delivery/boutiquedoacaisc",
+  cardapioOnlineStatus: "CONFIRMAR", // Link fornecido retorna loja não encontrada. Confirmar URL ativa.
+  horario: "CONFIRMAR", // Falta a grade completa de dias e horários de funcionamento.
+  fundacao: "CONFIRMAR", // Falta o ano de fundação.
+  url: "CONFIRMAR", // Falta o domínio oficial para canonical e URLs absolutas de compartilhamento.
+  fotoSalada: "CONFIRMAR", // Falta uma foto identificada da Salada de Fruta da Boutique.
+  mostrarPudim: false, // CONFIRMAR se a Boutique vende os produtos da Fábrica do Pudim antes de ativar.
 } as const;
-
+export const PUBLIC_SITE_URL: string | null = String(SITE.url) === "CONFIRMAR" ? null : SITE.url;
+export const WHATSAPP_NUMBER = "5547999595793";
+export const WHATSAPP_MESSAGE =
+  "Olá! Vim pelo site da Boutique do Açaí e quero fazer um pedido. Pode me passar o cardápio de hoje?";
+export const whatsapp = (message: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+export const WHATSAPP_URL = whatsapp(WHATSAPP_MESSAGE);
+// Cardápio pelo WhatsApp até o cliente confirmar um link online ativo.
+export const CARDAPIO_URL = WHATSAPP_URL;
+export const WHATSAPP_INFO_URL = whatsapp(
+  "Olá! Vim pelo site da Boutique do Açaí. Qual o horário de funcionamento e vocês entregam no meu bairro?",
+);
+export const INSTAGRAM_URL = "https://instagram.com/boutiquedoacaisc";
+export const ADDRESS = {
+  street: "Rua Manoel Francisco Coelho, 839",
+  district: "São Vicente, Itajaí, SC",
+};
 export const MAPS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=" +
-  encodeURIComponent("R. Ernesto Bianchini, 254, Rio Branco, Brusque, SC");
-
-export interface NavItem {
-  readonly label: string;
-  readonly href: string;
-}
-
-export const NAV_ITEMS: readonly NavItem[] = [
+  encodeURIComponent(`${ADDRESS.street}, ${ADDRESS.district}`);
+export const NAV_ITEMS = [
   { label: "Início", href: "#inicio" },
-  { label: "O que tem", href: "#o-que-tem" },
+  { label: "Nosso açaí", href: "#o-que-tem" },
   { label: "Sobre", href: "#sobre" },
   { label: "Avaliações", href: "#avaliacoes" },
   { label: "Onde estamos", href: "#onde-estamos" },
-] as const;
-
-export interface Category {
-  readonly id: string;
-  readonly name: string;
-  readonly text: string;
-}
-
-export const CATEGORIES: readonly Category[] = [
+];
+// colar aqui avaliações reais do Google, sem alterar
+export const REVIEWS = [
   {
-    id: "acai",
-    name: "Açaí",
-    text: "Cremoso, bem servido e pronto para montar do seu jeito.",
+    quote: "O melhor da região, açaí de qualidade, atendimento diferenciado. Recomendado!",
+    author: "Paloma A., avaliação no Google",
+  },
+];
+export const RATING = { score: "4,7", count: "320 avaliações no Google" };
+export const CATEGORIES = [
+  {
+    name: "Açaí na tigela",
+    text: "Açaí com morango, granulado de chocolate e leite condensado.",
+    image: "acai-tigela",
   },
   {
-    id: "sorvetes",
-    name: "Sorvetes",
-    text: "Dos clássicos aos sabores que fazem você mudar de ideia na hora de escolher.",
+    name: "Açaí no copo",
+    text: "Camadas de açaí, creme e cobertura em um copo transparente.",
+    image: "acai-copo",
   },
   {
-    id: "picoles",
-    name: "Picolés",
-    text: "Produção artesanal e mais de 50 sabores para escolher.",
+    name: "Açaí na casquinha",
+    text: "Açaí em casquinha de waffle com morangos e gotas de chocolate.",
+    image: "acai-waffle",
   },
   {
-    id: "milk-shakes",
-    name: "Milk shakes",
-    text: "Gelados, cremosos e sem economia no sabor.",
+    name: "Açaí puro",
+    text: "Açaí servido em um pote branco, sem acompanhamentos na foto.",
+    image: "acai-puro",
   },
-  {
-    id: "pastel",
-    name: "Pastel e caldo de cana",
-    text: "Para quando a vontade não para no sorvete.",
-  },
-] as const;
-
-export interface Review {
-  readonly quote: string;
-  readonly author: string;
-}
-
-export const REVIEWS: readonly Review[] = [
-  {
-    quote: "Sorvete muito gostoso, bem cremoso, de qualidade e sabores incríveis.",
-    author: "Angela Pereira",
-  },
-  { quote: "Ambiente agradável. Ótimo atendimento.", author: "Milene Cristina" },
-  {
-    quote: "Melhor atendimento da região, sorvete muito bom.",
-    author: "Cleiton Santos",
-  },
-] as const;
-
-export const RATING = { score: "4,9", count: "120 avaliações no Google" } as const;
+];

@@ -15,29 +15,28 @@ export function Avaliacoes() {
 
           <Reveal delay={100} className="md:pb-3">
             <p className="font-editorial max-w-[26ch] text-xl text-cacau/70 md:text-2xl">
-              O que escrevem sobre a Elee, com as palavras de quem esteve aqui.
+              O que escrevem sobre a Boutique, com as palavras de quem esteve aqui.
             </p>
           </Reveal>
         </div>
 
         {/* Depoimentos tratados como texto, empilhados no celular */}
-        <ul className="grid grid-cols-1 md:grid-cols-3">
+        <ul className="grid grid-cols-1">
           {REVIEWS.map((review, i) => (
             <li
               key={review.author}
-              className="border-b-2 border-cacau/15 py-10 md:border-r-2 md:border-b-0 md:pr-10 md:pt-12 md:last:border-r-0 last:border-b-0 md:[&:not(:first-child)]:pl-10"
+              className="border-b-2 border-cacau/15 py-10 md:border-r-0 md:border-b-0 md:pr-10 md:pt-12 md:last:border-r-0 last:border-b-0 md:[&:not(:first-child)]:pl-10"
             >
               <Reveal delay={i * 90}>
-                <span className="eyebrow text-rosa">0{i + 1}</span>
-                <blockquote className="font-display mt-5 text-[clamp(1.35rem,2vw,1.75rem)] leading-[1.06] text-cacau uppercase">
+                <span className="eyebrow text-acai">0{i + 1}</span>
+                <blockquote className="font-display mt-5 text-[clamp(1.35rem,2vw,1.75rem)] leading-[1.06] text-cacau">
                   {review.quote}
                 </blockquote>
-                <p className="eyebrow mt-6 text-cacau/55">{review.author}</p>
+                <p className="eyebrow mt-6 text-cacau">{review.author}</p>
               </Reveal>
             </li>
           ))}
         </ul>
-
       </div>
     </section>
   );

@@ -20,9 +20,16 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between gap-4 px-5 md:h-20 md:px-10">
         <a
           href="#inicio"
-          className="font-display text-lg leading-none tracking-tight text-cacau uppercase md:text-2xl"
+          className="font-display flex items-center gap-3 text-base leading-tight tracking-tight text-cacau uppercase md:text-2xl"
         >
-          Sorveteria Elee
+          <img
+            src="/images/logo.webp"
+            alt=""
+            width="48"
+            height="48"
+            className="size-10 shrink-0 rounded-full md:size-12"
+          />
+          <span className="max-w-[140px] md:max-w-none">Boutique do Açaí</span>
         </a>
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
@@ -45,8 +52,8 @@ export function SiteHeader() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram da Sorveteria Elee"
-            className="flex size-11 items-center justify-center text-cacau transition-colors hover:text-rosa"
+            aria-label="Instagram da Boutique do Açaí"
+            className="flex size-11 items-center justify-center text-cacau transition-colors hover:text-acai"
           >
             <InstagramIcon className="size-5" />
           </a>
@@ -54,7 +61,7 @@ export function SiteHeader() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Falar com a Sorveteria Elee no WhatsApp"
+            aria-label="Falar com a Boutique do Açaí no WhatsApp"
             className="flex size-11 items-center justify-center text-cacau transition-colors hover:text-acai"
           >
             <WhatsappIcon className="size-5" />
@@ -92,8 +99,9 @@ export function SiteHeader() {
 
       <div
         id="menu-mobile"
+        style={{ display: open ? "flex" : "none" }}
         hidden={!open}
-        className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col justify-between bg-acai px-6 pt-10 pb-10 lg:hidden"
+        className="fixed inset-x-0 top-16 bottom-0 md:top-20 z-40 flex-col justify-between bg-acai px-6 pt-10 pb-10 lg:hidden"
       >
         <nav aria-label="Navegação do celular">
           <ul className="flex flex-col gap-1">
@@ -104,7 +112,7 @@ export function SiteHeader() {
                   onClick={() => setOpen(false)}
                   className="font-display flex items-baseline gap-4 py-4 text-[2rem] leading-none text-creme uppercase"
                 >
-                  <span className="font-sans text-[0.65rem] tracking-[0.2em] text-creme/50">
+                  <span className="font-sans text-[0.65rem] tracking-[0.2em] text-creme/80">
                     0{i + 1}
                   </span>
                   {item.label}

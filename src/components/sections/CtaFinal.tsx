@@ -7,15 +7,15 @@ export function CtaFinal() {
       <div className="mx-auto flex max-w-[1600px] flex-col gap-10 px-5 py-20 md:px-10 md:py-28 lg:flex-row lg:items-end lg:justify-between">
         <Reveal>
           <h2 className="display-xl text-creme">
-            Bateu
+            A próxima
             <br />
-            vontade?
+            colherada?
           </h2>
         </Reveal>
 
         <Reveal delay={120} className="lg:pb-4">
           <p className="font-editorial max-w-[24ch] text-2xl leading-snug text-creme md:text-3xl">
-            Chama no WhatsApp e fala com a Elee.
+            Chama no WhatsApp e fala com a Boutique.
           </p>
           <a
             href={WHATSAPP_URL}

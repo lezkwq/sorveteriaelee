@@ -7,8 +7,8 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1600px] px-5 py-14 md:px-10 md:py-16">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           <div>
-            <p className="display-md text-creme">Sorveteria Elee</p>
-            <address className="mt-5 not-italic text-creme/65">
+            <p className="display-md text-creme">Boutique do Açaí</p>
+            <address className="mt-5 not-italic text-creme/90">
               <p>{ADDRESS.street}</p>
               <p>{ADDRESS.district}</p>
             </address>
@@ -18,8 +18,8 @@ export function SiteFooter() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram da Sorveteria Elee"
-                className="flex size-12 items-center justify-center border-2 border-creme/25 text-creme transition-colors hover:border-rosa hover:text-rosa"
+                aria-label="Instagram da Boutique do Açaí"
+                className="flex size-12 items-center justify-center border-2 border-creme/25 text-creme transition-colors hover:border-creme hover:text-acai"
               >
                 <InstagramIcon className="size-5" />
               </a>
@@ -27,7 +27,7 @@ export function SiteFooter() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Falar com a Sorveteria Elee no WhatsApp"
+                aria-label="Falar com a Boutique do Açaí no WhatsApp"
                 className="flex size-12 items-center justify-center border-2 border-creme/25 text-creme transition-colors hover:border-amarelo hover:text-amarelo"
               >
                 <WhatsappIcon className="size-5" />
@@ -51,8 +51,8 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <p className="eyebrow mt-14 border-t border-creme/15 pt-6 text-creme/40">
-          Sorveteria Elee · Brusque, SC
+        <p className="eyebrow mt-14 border-t border-creme/15 pt-6 text-creme/80">
+          Boutique do Açaí · Itajaí, SC
         </p>
       </div>
     </footer>

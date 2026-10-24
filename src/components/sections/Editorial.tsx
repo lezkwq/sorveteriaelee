@@ -1,40 +1,31 @@
-import { IMG_ACAI_DUPLO } from "@/lib/images";
 import { Reveal } from "@/components/Reveal";
-
+import { image } from "@/lib/images";
 export function Editorial() {
   return (
-    <section className="border-b-2 border-cacau bg-rosa">
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 lg:grid-cols-12">
-        <Reveal className="lg:col-span-7">
+    <section className="border-b-2 border-cacau bg-acai">
+      <div className="mx-auto grid max-w-[1600px] lg:grid-cols-12">
+        <Reveal className="flex justify-center bg-[#e5dceb] p-8 lg:col-span-6">
           <img
-            src={IMG_ACAI_DUPLO.src}
-            srcSet={IMG_ACAI_DUPLO.srcSet}
-            sizes="(min-width: 1024px) 58vw, 100vw"
-            alt="Dois copos de açaí com morango, banana e creme, com potes de cobertura ao fundo"
-            width={1110}
-            height={1417}
+            src={image("acai-waffle")}
+            alt="Açaí em casquinha de waffle com morangos e gotas de chocolate sobre fundo roxo"
+            width="640"
+            height="800"
             loading="lazy"
-            decoding="async"
-            className="aspect-[4/5] w-full object-cover object-center lg:aspect-[4/4.4]"
+            className="max-h-[650px] w-full object-contain"
           />
         </Reveal>
-
-        <div className="flex flex-col justify-center gap-8 px-5 py-14 md:px-10 md:py-20 lg:col-span-5">
+        <div className="flex flex-col justify-center px-5 py-16 md:px-10 lg:col-span-6">
           <Reveal>
-            <h2 className="display-lg text-creme">
-              Para sentar.
+            <p className="eyebrow text-creme">Entre os mais pedidos</p>
+            <h2 className="display-lg mt-7 text-creme">
+              Açaí com
               <br />
-              Para levar.
+              Leite
               <br />
-              Para repetir.
+              Condensado.
             </h2>
-          </Reveal>
-
-          <Reveal delay={100}>
-            <span className="mb-6 block h-[2px] w-16 bg-creme" />
-            <p className="max-w-[36ch] text-lg leading-relaxed text-creme md:text-xl">
-              Tem sorvete, picolé, açaí, milk shake, pastel frito na hora e caldo de cana. Escolha o
-              seu e fique à vontade.
+            <p className="font-editorial mt-8 max-w-[28ch] text-2xl text-creme">
+              Uma das escolhas favoritas de quem pede na Boutique.
             </p>
           </Reveal>
         </div>

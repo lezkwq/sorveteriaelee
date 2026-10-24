@@ -1,109 +1,57 @@
-import { IMG_BANDEJA_ACAI, IMG_TACA_SORVETE } from "@/lib/images";
 import { Reveal } from "@/components/Reveal";
-import { CATEGORIES, type Category } from "@/lib/site";
-
-/** Fallback defensivo: garante um objeto valido caso o id nao seja encontrado. */
-const EMPTY_CATEGORY: Category = { id: "", name: "", text: "" };
-
-function pick(id: string): Category {
-  return CATEGORIES.find((c) => c.id === id) ?? EMPTY_CATEGORY;
-}
-
+import { CATEGORIES, CARDAPIO_URL } from "@/lib/site";
+import { image } from "@/lib/images";
 export function Produtos() {
-  const acai = pick("acai");
-  const sorvetes = pick("sorvetes");
-  const picoles = pick("picoles");
-  const milkshakes = pick("milk-shakes");
-  const pastel = pick("pastel");
-
   return (
     <section id="o-que-tem" className="border-b-2 border-cacau bg-creme">
       <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-        <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <h2 className="display-lg max-w-[9ch] text-cacau">Tem de tudo um pouco.</h2>
-          <p className="font-editorial max-w-[26ch] text-xl text-cacau/75 md:pb-2 md:text-2xl">
-            E sempre tem uma boa desculpa para voltar.
+        <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <h2 className="display-lg text-cacau">
+            Açaí em cada
+            <br />
+            colherada.
+          </h2>
+          <p className="font-editorial max-w-[27ch] text-2xl text-acai">
+            Tigela, copo ou casquinha. Qual combina com a sua vontade?
           </p>
         </Reveal>
-
-        {/* Composicao assimetrica: cada categoria ocupa um peso diferente */}
-        <div className="mt-14 grid grid-cols-1 gap-px border-2 border-cacau bg-cacau md:grid-cols-6">
-          {/* Acai: bloco largo em roxo */}
-          <Reveal className="bg-acai p-7 md:col-span-4 md:p-12">
-            <span className="eyebrow text-creme/60">01</span>
-            <h3 className="display-md mt-4 text-creme">{acai.name}</h3>
-            <p className="mt-4 max-w-[34ch] text-base leading-relaxed text-creme/85 md:text-lg">
-              {acai.text}
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {CATEGORIES.map((c, i) => (
+            <Reveal key={c.image} delay={i * 60}>
+              <div className="bg-[#eee6da] p-3">
+                <img
+                  src={image(c.image)}
+                  alt={c.text}
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-contain"
+                />
+              </div>
+              <p className="eyebrow mt-6 text-acai">0{i + 1}</p>
+              <h3 className="display-md mt-3 text-cacau">{c.name}</h3>
+              <p className="mt-4 leading-relaxed text-cacau">{c.text}</p>
+            </Reveal>
+          ))}
+        </div>
+        <div className="mt-12 grid gap-8 border-t border-cacau/30 pt-10 md:grid-cols-2">
+          <Reveal>
+            <h3 className="display-md text-acai">Acompanhamentos</h3>
+            <p className="mt-4 max-w-[45ch] leading-relaxed">
+              Nas fotos, morangos, leite condensado, gotas de chocolate e calda vermelha.
             </p>
           </Reveal>
-
-          {/* Picoles: coluna estreita, tratamento tipografico */}
-          <Reveal
-            delay={80}
-            className="flex flex-col justify-between bg-amarelo p-7 md:col-span-2 md:p-10"
-          >
-            <div>
-              <span className="eyebrow text-cacau/50">03</span>
-              <h3 className="display-md mt-4 text-cacau">{picoles.name}</h3>
-            </div>
-            <p className="mt-6 text-base leading-relaxed text-cacau/80">{picoles.text}</p>
-          </Reveal>
-
-          {/* Bandeja de acai: montagem real da casa */}
-          <Reveal className="relative overflow-hidden bg-rosa md:col-span-3">
-            <img
-              src={IMG_BANDEJA_ACAI.src}
-              srcSet={IMG_BANDEJA_ACAI.srcSet}
-              sizes="(min-width: 768px) 50vw, 100vw"
-              alt="Bandeja de açaí montada com creme, chocolate, morango e confeitos"
-              width={1200}
-              height={1200}
-              loading="lazy"
-              decoding="async"
-              className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.04] md:absolute md:inset-0 md:aspect-auto md:h-full"
-            />
-          </Reveal>
-
-          <Reveal
-            delay={80}
-            className="flex flex-col justify-center bg-creme p-7 md:col-span-3 md:p-12"
-          >
-            <span className="eyebrow text-cacau/50">02</span>
-            <h3 className="display-md mt-4 text-cacau">{sorvetes.name}</h3>
-            <p className="mt-4 max-w-[32ch] text-base leading-relaxed text-cacau/75 md:text-lg">
-              {sorvetes.text}
-            </p>
-          </Reveal>
-
-          {/* Milk shakes e salgados fecham a composicao */}
-          <Reveal className="bg-ciano p-7 md:col-span-2 md:p-10">
-            <span className="eyebrow text-cacau/50">04</span>
-            <h3 className="display-md mt-4 text-cacau">{milkshakes.name}</h3>
-            <p className="mt-4 text-base leading-relaxed text-cacau/80">{milkshakes.text}</p>
-          </Reveal>
-
-          <Reveal delay={80} className="relative overflow-hidden bg-cacau md:col-span-2">
-            <img
-              src={IMG_TACA_SORVETE.src}
-              srcSet={IMG_TACA_SORVETE.srcSet}
-              sizes="(min-width: 768px) 34vw, 100vw"
-              alt="Taça de sorvete com calda de morango, confeitos crocantes e wafer"
-              width={1122}
-              height={1402}
-              loading="lazy"
-              decoding="async"
-              className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.04] md:absolute md:inset-0 md:aspect-auto md:h-full"
-            />
-          </Reveal>
-
-          <Reveal className="flex flex-col justify-between bg-ameixa p-7 md:col-span-2 md:p-12">
-            <div>
-              <span className="eyebrow text-creme/55">05</span>
-              <h3 className="display-md mt-4 max-w-[14ch] text-creme">{pastel.name}</h3>
-            </div>
-            <p className="mt-6 max-w-[34ch] text-base leading-relaxed text-creme/85 md:text-lg">
-              {pastel.text}
-            </p>
+          <Reveal>
+            <h3 className="display-md text-acai">Salada de Fruta da Boutique</h3>
+            <p className="mt-4 leading-relaxed">Uma das mais pedidas da Boutique.</p>
+            <a
+              href={CARDAPIO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="eyebrow mt-5 inline-block underline underline-offset-4"
+            >
+              Consultar no cardápio
+            </a>
           </Reveal>
         </div>
       </div>

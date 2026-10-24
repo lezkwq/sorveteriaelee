@@ -8,7 +8,7 @@ export function WhatsappFab() {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Falar com a Sorveteria Elee no WhatsApp"
+      aria-label="Falar com a Boutique do Açaí no WhatsApp"
       className="fixed right-4 bottom-4 z-40 flex size-13 items-center justify-center border-2 border-cacau bg-amarelo text-cacau transition-colors hover:bg-creme lg:hidden"
     >
       <WhatsappIcon className="size-6" />

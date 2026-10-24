@@ -68,8 +68,8 @@
   --color-acai: var(--acai);
   --color-ameixa: var(--ameixa);
   --color-creme: var(--creme);
-  --color-rosa: var(--rosa);
-  --color-ciano: var(--ciano);
+  --color-roxo-claro: var(--roxo-claro);
+  --color-verde: var(--verde);
   --color-amarelo: var(--amarelo);
   --color-cacau: var(--cacau);
 }
@@ -77,14 +77,14 @@
 :root {
   --radius: 0.125rem;
 
-  /* Paleta extraída das fotografias da Elee */
-  --acai: oklch(0.42 0.19 300);
-  --ameixa: oklch(0.3 0.13 340);
-  --creme: oklch(0.96 0.02 90);
-  --rosa: oklch(0.63 0.24 350);
-  --ciano: oklch(0.72 0.14 225);
-  --amarelo: oklch(0.85 0.16 90);
-  --cacau: oklch(0.22 0.04 40);
+  /* Roxos e verde amostrados do logo fornecido. */
+  --acai: #451751;
+  --ameixa: #532e59;
+  --creme: #faf6ec;
+  --roxo-claro: #e5dceb;
+  --verde: #6f9314;
+  --amarelo: #d8e6b5;
+  --cacau: #301437;
 
   --background: var(--creme);
   --foreground: var(--cacau);
@@ -94,8 +94,8 @@
   --popover-foreground: var(--cacau);
   --primary: var(--acai);
   --primary-foreground: var(--creme);
-  --secondary: var(--rosa);
-  --secondary-foreground: var(--creme);
+  --secondary: var(--roxo-claro);
+  --secondary-foreground: var(--acai);
   --muted: oklch(0.92 0.02 90);
   --muted-foreground: oklch(0.45 0.03 40);
   --accent: var(--amarelo);
@@ -121,7 +121,7 @@
   }
 
   html {
-    overflow-x: hidden;
+    overflow-x: clip;
     scroll-behavior: smooth;
   }
 
@@ -129,12 +129,12 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background-color: var(--color-rosa);
+    background-color: var(--color-acai);
     color: var(--color-creme);
   }
 }
@@ -162,7 +162,6 @@
   line-height: 1;
   text-transform: uppercase;
 }
-
 
 @utility eyebrow {
   font-family: var(--font-sans);
@@ -219,4 +218,17 @@
 .lovable-badge,
 [data-lovable-badge] {
   display: none !important;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #6f9314;
+  outline-offset: 5px;
+}
+
+header {
+  border-bottom-color: #6f9314;
 }

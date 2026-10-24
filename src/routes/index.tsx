@@ -11,54 +11,52 @@ import { Avaliacoes } from "@/components/sections/Avaliacoes";
 import { Localizacao } from "@/components/sections/Localizacao";
 import { CtaFinal } from "@/components/sections/CtaFinal";
 
-const TITLE = "Sorveteria Elee";
+import { Pudim } from "@/components/sections/Pudim";
+import { SITE, ADDRESS, INSTAGRAM_URL, PUBLIC_SITE_URL } from "@/lib/site";
 const DESCRIPTION =
-  "Sorvetes e picolés artesanais, açaí, milk shake, pastel e caldo de cana no Rio Branco, em Brusque. Conheça a Sorveteria Elee.";
-const SITE_URL = "https://sorveteriaelee.lovable.app";
-
+  "Boutique do Açaí no São Vicente, em Itajaí. Açaí na tigela, no copo e na casquinha. Consulte o cardápio e faça seu pedido.";
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: TITLE },
+      { title: "Boutique do Açaí | Itajaí, SC" },
       { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
+      { property: "og:title", content: SITE.name },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: SITE_URL },
       { property: "og:locale", content: "pt_BR" },
+      { property: "og:image", content: `${PUBLIC_SITE_URL ?? ""}/images/acai-principal.webp` },
+      ...(PUBLIC_SITE_URL ? [{ property: "og:url", content: PUBLIC_SITE_URL }] : []),
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${PUBLIC_SITE_URL ?? ""}/images/acai-principal.webp` },
+      { name: "twitter:title", content: SITE.name },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
-    links: [{ rel: "canonical", href: SITE_URL }],
+    links: PUBLIC_SITE_URL ? [{ rel: "canonical", href: PUBLIC_SITE_URL }] : [],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "IceCreamShop",
-          name: "Sorveteria Elee",
+          "@type": "FoodEstablishment",
+          name: SITE.name,
           description: DESCRIPTION,
-          url: SITE_URL,
-          telephone: "+554791557148",
+          telephone: "+5547999595793",
+          priceRange: "R$ 20 a R$ 40 por pessoa",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "R. Ernesto Bianchini, 254",
-            addressLocality: "Brusque",
+            streetAddress: ADDRESS.street,
+            addressLocality: "Itajaí",
             addressRegion: "SC",
             addressCountry: "BR",
           },
-          sameAs: ["https://www.instagram.com/sorveteria_elee/"],
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            reviewCount: "120",
-          },
+          sameAs: [INSTAGRAM_URL],
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.7", reviewCount: "320" },
         }),
       },
     ],
   }),
 });
-
 function Index() {
   return (
     <div className="min-h-screen bg-creme">
@@ -67,6 +65,7 @@ function Index() {
         <Hero />
         <Produtos />
         <Editorial />
+        <Pudim />
         <Sobre />
         <Avaliacoes />
         <Localizacao />
