@@ -4,7 +4,7 @@ Adaptação local no branch `boutique_do_acai`. A versão original permanece no 
 
 ## Desenvolvimento
 
-Instale com `pnpm install --node-linker=hoisted` e execute `pnpm dev`. Para compilar: `pnpm build`.
+Use Node.js 22.12 ou superior. Instale com `npm ci` e execute `npm run dev`. Para compilar: `npm run build`. O arquivo `package-lock.json` fixa as dependências, incluindo a correção de segurança do TanStack Start.
 
 ## Dados e imagens
 
